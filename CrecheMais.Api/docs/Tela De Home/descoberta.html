@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descoberta - Creche +</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="descoberta.css">
+    <script src="descoberta.js" defer></script>
+</head>
+<body>
+ 
+    <div class="descoberta-container">
+ 
+        <div class="map-section">
+ 
+            <!-- Label indicando que é um tour 360° -->
+            <div class="tour-badge">
+                <span>🔄 Tour 360°</span>
+            </div>
+ 
+            <!-- Container onde o iframe do Kuula será inserido pelo JS -->
+            <div class="css-map-background" id="map-iframe-container"></div>
+            
+            <!-- Botões de navegação entre tours -->
+            <button class="tour-nav-btn tour-nav-prev" id="tour-prev-btn">
+                <span>❮</span>
+            </button>
+            <button class="tour-nav-btn tour-nav-next" id="tour-next-btn">
+                <span>❯</span>
+            </button>
+            
+            <!-- Indicadores de tour -->
+            <div class="tour-indicators">
+                <span class="tour-indicator active"></span>
+                <span class="tour-indicator"></span>
+            </div>
+ 
+            <div class="map-controls">
+                <button class="control-btn">Filtrar ⌄</button>
+                <button class="control-btn">Classificar ⌄</button>
+                <span class="result-count">2 resultados</span>
+            </div>
+ 
+        </div>
+ 
+        <div class="creche-detail-card" id="creche-detail-card">
+ 
+            <div class="creche-map-info">
+                <img src="../ImagensHome/Creche1.jpg" alt="Imagem da Creche" class="creche-map-image" id="map-creche-image">
+                <h3 id="map-creche-name">Creche ProInfância</h3>
+            </div>
+ 
+            <!-- Botão de contato -->
+            <div class="action-buttons">
+                <button class="contact-btn" id="contact-map-btn">Entrar em Contato</button>
+            </div>
+ 
+        </div>
+    </div>
+ 
+    <footer>
+        <img src="../ImagensHome/Home.png" alt="Home" class="footer-icon" onclick="window.location.href='home.html'">
+        <img src="../ImagensHome/Descoberta.png" alt="Descoberta" class="footer-icon active" onclick="window.location.href='descoberta.html'">
+        <img src="../ImagensHome/Chat.png" alt="Conversas" class="footer-icon" onclick="window.location.href='chatlist.html'">
+        <img src="../ImagensHome/Sino.png" alt="Notificações" class="footer-icon" id="chat-btn" onclick="window.location.href='notificacoes.html'">
+        <img src="../ImagensHome/Perfil.png" alt="Perfil" class="footer-icon" onclick="window.location.href='perfil.html'">
+    </footer>
+ 
+</body>
+</html>

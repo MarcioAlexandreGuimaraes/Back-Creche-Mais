@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cadastro da Criança - Creche+</title>
+<link rel="stylesheet" href="cadastrosfilhos.css" />
+<script src="cadastrosfilhos.js" defer></script>
+</head>
+<body>
+<div class="header">
+<img src="LogoCreche.png" alt="Logo Creche+" class="logo" />
+</div>
+<div class="container">
+<div class="card">
+<h1>Registro da Criança</h1>
+<p class="subtitle">Insira as informações necessárias</p>
+<form id="parentForm">
+<div class="input-group">
+<label for="NomedoFilho">Nome do Filho:</label>
+<input type="text" id="NomedoFilho" placeholder="Nome do Filho" required />
+<label for="Idade">Idade</label>
+<input type="number" id="Idade" placeholder="Idade" required />
+<label for="CPF">CPF</label>
+<input type="text" id="CPF" placeholder="CPF" required maxlength="14" />
+</div>
+<div class="input-group">
+<label>A criança é especial? (PCD)</label>
+<div class="radio-group">
+<div class="radio-option">
+<input type="radio" name="deficiencia" id="deficienciaSim" value="sim">
+<label for="deficienciaSim" class="radio-label">
+<span class="radio-custom"></span> Sim
+</label>
+</div>
+<div class="radio-option">
+<input type="radio" name="deficiencia" id="deficienciaNao" value="nao" checked>
+<label for="deficienciaNao" class="radio-label">
+<span class="radio-custom"></span> Não
+</label>
+</div>
+</div>
+</div>
+<div class="input-group" id="campoTipoDeficiencia" style="display: none;">
+<label for="tipoDeficiencia">Tipo de Deficiência:</label>
+<input type="text" id="tipoDeficiencia" placeholder="Descreva o tipo de deficiência">
+</div>
+<button type="submit" class="btn-primary">Salvar</button>
+<button type="button" id="btnRegistroFilhos" class="btn-secondary">Registro de Filhos</button>
+<button type="button" id="btnContinuar" class="btn-continuar" disabled>Continuar</button>
+</form>
+</div>
+<div id="gridContainer" class="grid-container" style="display: none;">
+<h2>Crianças Cadastradas</h2>
+<div class="table-wrapper">
+<table id="gridTable">
+<thead>
+<tr>
+<th>Nome</th>
+<th>Idade</th>
+<th>CPF</th>
+<th>Deficiência</th>
+<th>Tipo de Deficiência</th>
+</tr>
+</thead>
+<tbody id="gridBody">
+</tbody>
+</table>
+</div>
+<p id="noDataMessage" style="display: none;">Nenhuma criança cadastrada ainda.</p>
+<button id="btnVoltar" class="btn-secondary">Voltar ao Cadastro</button>
+</div>
+</div>
+</body>
+</html>

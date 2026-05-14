@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificações - Creche +</title>
+    <link rel="stylesheet" href="home.css"> 
+    <link rel="stylesheet" href="notificacoes.css"> 
+    <script src="notificacoes.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <img src="LogoCreche.png" alt="Logo Creche+" class="logo">
+            <h1 class="page-title">Notificações</h1> 
+        </div>
+    </div>
+
+    <div class="notifications-container" id="notifications-list">
+        
+        <div class="notification-item type-mensagem" data-id="1">
+            <div class="icon-mensagem">💬</div>
+            <div class="notification-details">
+                <p class="notification-message">
+                    **1 nova mensagem** da creche **ProInfância**. 
+                    <span class="creche-source">Creche ProInfância</span>
+                </p>
+                <div class="notification-footer">
+                    <span class="notification-date">
+                        Agora, 27/10/2025 às 15:45
+                    </span>
+                    <button class="delete-btn" title="Excluir">×</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="notification-item type-vaga" data-id="2">
+            <div class="icon-vaga"></div>
+            <div class="notification-details">
+                <p class="notification-message">
+                    **VAGAS ABERTAS!** A creche **Santa Luzia** abriu novas vagas.
+                    <span class="creche-source">Creche Santa Luzia</span>
+                </p>
+                <div class="notification-footer">
+                    <span class="notification-date">
+                        Ontem, 26/10/2025 às 09:10
+                    </span>
+                    <button class="delete-btn" title="Excluir">×</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="notification-item type-vaga" data-id="3">
+            <div class="icon-vaga">👶</div>
+            <div class="notification-details">
+                <p class="notification-message">
+                    **VAGAS ABERTAS!** A creche **Wanda Cruz** abriu vagas no berçário.
+                    <span class="creche-source">Creche Wanda Cruz</span>
+                </p>
+                <div class="notification-footer">
+                    <span class="notification-date">
+                        25/10/2025
+                    </span>
+                    <button class="delete-btn" title="Excluir">×</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <footer>
+        <img src="../ImagensHome/Home.png" alt="Home" class="footer-icon" onclick="window.location.href='home.html'">
+        <img src="../ImagensHome/Descoberta.png" alt="Descoberta" class="footer-icon" onclick="window.location.href='descoberta.html'">
+        <img src="../ImagensHome/Chat.png" alt="Conversas" class="footer-icon" onclick="window.location.href='chatlist.html'"> 
+        <img src="../ImagensHome/Sino.png" alt="Notificações" onclick="window.location.href='notificacoes.html'">
+        <img src="../ImagensHome/Perfil.png" alt="Perfil" class="footer-icon"onclick="window.location.href='perfil.html'">
+    </footer>
+</body>
+</html>
