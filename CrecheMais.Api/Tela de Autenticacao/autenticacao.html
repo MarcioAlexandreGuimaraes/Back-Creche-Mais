@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar - Creche+</title>
+    <!-- Certifique-se de que APENAS login.css está linkado aqui --><link rel="stylesheet" href="autenticacao.css"> 
+    <script type="module" src="autenticacao.js" defer></script>
+</head>
+<body>
+
+    <div class="header">
+        <img src="LogoCreche.png" alt="Logo Creche+" class="logo">
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h1>Bem-vindo(a)!</h1>
+            <p class="subtitle">Entre com seu e-mail e senha para acessar sua conta</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="email@dominio.com" required>
+                    <input type="password" id="senha" placeholder="Senha" required> 
+                </div>
+                
+                <button type="submit" class="btn-primary" id="btnEntrar">Entrar</button>
+            </form>
+
+            <div class="forgot-password">
+                <a href="#">Esqueci minha senha</a>
+            </div>
+
+            <div class="divider"><span>ou</span></div>
+
+            <!-- Novo botão do Google adicionado aqui -->
+            <button id="googleBtn" class="btn-google">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="google-icon">
+                Continuar com o Google
+            </button>
+
+            <button id="btnCriarConta" class="btn-secondary">
+                Criar uma nova conta
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>

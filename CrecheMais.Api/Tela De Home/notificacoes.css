@@ -1,0 +1,108 @@
+/* notficacoes.css - Estilo Outlook-Like */
+
+/* -------------------- Layout Básico (Mantido) -------------------- */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; 
+}
+
+/* Espaçamento para o conteúdo entre header e footer */
+.notifications-container {
+    flex-grow: 1;
+    padding: 20px 15px;
+    padding-top: 150px; /* Ajuste para dar espaço ao header */
+    margin-bottom: 60px; /* Espaço para o footer */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre as notificações empilhadas */
+}
+
+
+
+.notification-item {
+    display: flex;
+    /* Alinhamento superior, como em um card de e-mail */
+    align-items: flex-start; 
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px; /* Cantos levemente arredondados */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+    border-left: 4px solid transparent; /* Linha de cor discreta */
+    transition: transform 0.2s;
+}
+
+.notification-item:hover {
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cores de destaque (usando as cores originais do site) */
+.type-vaga {
+    border-color: #6c63ff; /* Azul/Roxo do tema principal */
+}
+
+.type-mensagem {
+    border-color: #4dc2f5; /* Um azul mais claro ou verde do tema */
+}
+
+/* Ícones de tipo (ajuste o tamanho/emoji) */
+.icon-vaga, .icon-mensagem {
+    font-size: 20px;
+    /* Retiramos a borda para um visual mais limpo */
+    margin-right: 15px;
+    flex-shrink: 0; /* Impede que o ícone encolha */
+}
+
+.notification-details {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.notification-message {
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    color: #1a1a1a;
+    line-height: 1.4;
+}
+
+.creche-source {
+    display: block;
+    font-size: 12px;
+    color: #6c63ff; /* Destaque para o nome da creche */
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.notification-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Data de Envio da Notificação */
+.notification-date {
+    font-size: 11px;
+    color: #888;
+}
+
+/* Botão de Excluir (Agora parte do footer da notificação) */
+.delete-btn {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+    transition: color 0.2s;
+}
+
+.delete-btn:hover {
+    color: #ff4d4d; 
+}

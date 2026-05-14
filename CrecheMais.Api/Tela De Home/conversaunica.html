@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversa Direta</title>
+    <link rel="stylesheet" href="conversaunica.css">
+    <script src="conversaunica.js" defer></script>
+</head>
+<body class="chat-body">
+    
+    <div class="container chat-container">
+        
+        <div class="chat-window">
+            <div class="chat-header">
+                <button id="back-to-chats">&lt; Voltar</button>
+                <span id="chat-recipient-name">CrecheX</span>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages-area">
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+                <button id="send-btn">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <img src="../ImagensHome/Home.png" alt="Home" class="footer-icon" onclick="window.location.href='home.html'">
+        <img src="../ImagensHome/Descoberta.png" alt="Descoberta" class="footer-icon" onclick="window.location.href='descoberta.html'">
+        <img src="../ImagensHome/Chat.png" alt="Conversas" class="footer-icon active" id="chat-btn-footer"> 
+         <img src="../ImagensHome/Sino.png" alt="Notificações" class="footer-icon" id="chat-btn" onclick="window.location.href='notificacoes.html'">
+        <img src="../ImagensHome/Perfil.png" alt="Perfil" class="footer-icon" onclick="window.location.href='perfil.html'">
+    </footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Creche+</title>
+    <link rel="stylesheet" href="login.css"> 
+    <link rel="stylesheet" href="perfil.css"> 
+    <script src="perfil.js" defer></script> 
+</head>
+<body class="fundo-perfil">
+
+    <div class="header">
+        <img src="LogoCreche.png" alt="Logo Creche+" class="logo">
+    </div>
+
+    <div class="container" id="perfilContainer"> 
+        <div class="card profile-card">
+            <h1 class="profile-title">Meu Perfil</h1>
+            
+            <div class="profile-image-container">
+                <img src="../ImagensHome/Avatar.jpeg" alt="Foto de Perfil" id="profileImage" class="profile-image"> 
+            </div>
+
+            <h2 class="section-title">Meu Cadastro</h2>
+            <div id="parent-info-list" class="profile-info-list"> 
+            </div>
+            
+            <div class="profile-actions">
+                <button class="btn-secondary edit-btn" id="editProfileBtn">Editar Perfil</button>
+                <button class="btn-primary" id="saveProfileBtn" style="display: none;">Salvar Perfil</button>
+            </div>
+            <h2 class="section-title">Cadastro dos Filhos</h2>
+            
+            <div class="table-wrapper">
+                <table id="children-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Idade</th>
+                            <th>CPF</th>
+                            <th>PCD</th>
+                            <th>Tipo de Deficiência</th> 
+                        </tr>
+                    </thead>
+                    <tbody id="children-table-body"> 
+                    </tbody>
+                </table>
+            </div>
+            <p id="noDataMessage" class="no-children-message">Nenhuma criança cadastrada ainda.</p> 
+            
+            <button class="btn-primary" id="openChildModalBtn">Cadastrar Filhos</button>
+
+            <h2 class="section-title">Creches Cadastradas</h2>
+            <div id="creches-cadastradas-list" class="profile-info-list creches-list-container"> 
+                <p class="no-data-message" id="noCrechesCadastradas">Nenhuma creche cadastrada.</p>
+            </div>
+            
+            <h2 class="section-title">Lista de Espera</h2>
+            <div id="creches-lista-espera-list" class="profile-info-list creches-list-container"> 
+                <p class="no-data-message" id="noCrechesListaEspera">Nenhuma creche na lista de espera.</p>
+            </div>
+
+            <div class="profile-actions">
+                <button class="btn-logout" id="logoutBtn">Sair da Conta</button> 
+            </div>
+        </div>
+    </div>
+    
+    <div id="childModal" class="modal"> 
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="child-form-container">
+                <h2 class="modal-title">Registro da Criança</h2>
+                <p class="subtitle">Insira as informações necessárias</p>
+
+                <form id="modalChildForm">
+                    <div class="input-group">
+                        <label for="modalNomedoFilho">Nome do Filho:</label>
+                        <input type="text" id="modalNomedoFilho" placeholder="Nome do Filho" required />
+
+                        <label for="modalIdade">Idade</label>
+                        <input type="number" id="modalIdade" placeholder="Idade" required />
+
+                        <label for="modalCPF">CPF</label>
+                        <input type="text" id="modalCPF" placeholder="CPF" required maxlength="14" /> 
+                    </div>
+
+                    <div class="input-group">
+                        <label>A criança é especial? (PCD)</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" name="modalDeficiencia" id="modalDeficienciaSim" value="sim">
+                                <label for="modalDeficienciaSim" class="radio-label">Sim</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="modalDeficiencia" id="modalDeficienciaNao" value="nao" checked>
+                                <label for="modalDeficienciaNao" class="radio-label">Não</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group" id="modalCampoTipoDeficiencia" style="display: none;">
+                        <label for="modalTipoDeficiencia">Tipo de Deficiência:</label>
+                        <input type="text" id="modalTipoDeficiencia" placeholder="Descreva o tipo de deficiência">
+                    </div>
+
+                    <button type="submit" class="btn-primary">Salvar Criança</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <img src="../ImagensHome/Home.png" alt="Home" class="footer-icon" onclick="window.location.href='home.html'">
+        <img src="../ImagensHome/Descoberta.png" alt="Descoberta" class="footer-icon" onclick="window.location.href='descoberta.html'">
+        <img src="../ImagensHome/Sino.png" alt="Notificações" class="footer-icon" onclick="window.location.href='notificacoes.html'">
+        <img src="../ImagensHome/Chat.png" alt="Conversas" class="footer-icon" onclick="window.location.href='chatlist.html'"> 
+        <img src="../ImagensHome/Perfil.png" alt="Perfil" class="footer-icon active" onclick="window.location.href='perfil.html'">
+
+    </footer>
+      
+</body>
+</html>

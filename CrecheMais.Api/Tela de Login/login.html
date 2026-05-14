@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Creche+</title>
+    <link rel="stylesheet" href="login.css"> 
+</head>
+<body>
+
+    <div class="header">
+        <img src="LogoCreche.png" alt="Logo Creche+" class="logo">
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h1>Criar uma conta</h1>
+            <p class="subtitle">Insira seu e-mail para se cadastrar em nosso site</p>
+
+            <form id="signupForm">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="email@dominio.com" required>
+                </div>
+                <button type="submit" class="btn-primary">Continuar</button>
+            </form>
+
+            <div class="divider"><span>ou</span></div>
+
+            <button id="googleBtn" class="btn-google">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="google-icon">
+                Continuar com o Google
+            </button>
+
+            <p class="terms">
+                Ao clicar em continuar, você concorda com os nossos
+                <a href="#" id="termsLink">Termos de Serviço</a> e com a
+                <a href="#" id="privacyLink">Política de Privacidade</a>
+            </p>
+        </div>
+    </div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+
+    // Suas configurações de Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyDq00U1RYcWd1x5dLC6cqYhHikgBgPuwMM",
+        authDomain: "creche-mais.firebaseapp.com",
+        projectId: "creche-mais",
+        storageBucket: "creche-mais.firebasestorage.app",
+        messagingSenderId: "431728403505",
+        appId: "1:431728403505:web:1ae60ab505d9d285d8a110"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const signupForm = document.getElementById('signupForm');
+    const emailInput = document.getElementById('email');
+    const googleBtn = document.getElementById('googleBtn');
+    const termsLink = document.getElementById('termsLink');
+    const privacyLink = document.getElementById('privacyLink');
+
+    // Função auxiliar para salvar e redirecionar
+    const salvarDadosLoginERedirecionar = (email) => {
+        // 1. Cria o objeto estruturado 'dadosLogin' (senha inicial vazia)
+        const dadosLogin = {
+            email: email,
+            senha: '' 
+        };
+        
+        // 2. Salva o objeto completo em uma única chave 'dadosLogin'
+        localStorage.setItem('dadosLogin', JSON.stringify(dadosLogin));
+        window.location.href = '../CadastrosPais/cadastrospais.html';
+    };
+
+
+    // 1. Cadastro por E-mail (Formulário)
+    signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+
+        if (email) {
+            salvarDadosLoginERedirecionar(email); // Salva email e senha vazia
+        } else {
+            alert('Por favor, insira um e-mail válido.');
+        }
+    });
+
+
+    // 2. Login com Google
+    googleBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        const provider = new GoogleAuthProvider();
+
+        try {
+            const result = await signInWithPopup(auth, provider);
+            // Salva o e-mail do Google (senha permanece vazia)
+            salvarDadosLoginERedirecionar(result.user.email); 
+        } catch (error) {
+            console.error(error);
+            alert('Erro no login com o Google: ' + error.message);
+        }
+    });
+
+    // Termos e Privacidade (Mantidos)
+    termsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Termos de Serviço seriam exibidos aqui.');
+    });
+
+    privacyLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Política de Privacidade seria exibida aqui.');
+    });
+</script>
+</body>
+</html>

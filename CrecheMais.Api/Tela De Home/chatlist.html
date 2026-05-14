@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Chat Creche +</title>
+ <link rel="stylesheet" href="home.css">
+ <link rel="stylesheet" href="chatlist.css">
+ <script src="chatlist.js" defer></script>
+</head>
+<body class="chat-body">
+
+    <div class="header">
+        <img src="LogoCreche.png" alt="Logo Creche+" class="logo">
+    </div>
+
+    <div class="container chat-container">
+        <h1>Mensagens</h1>
+        
+        <div class="chat-main-area">
+
+            <!-- Lista de contatos -->
+            <div class="contact-list" id="contact-list">
+                <div class="no-contacts" id="no-contacts" style="display: none;">
+                    Nenhum contato encontrado.
+                </div>
+            </div>
+
+            <!-- Janela de chat (inicialmente oculta) -->
+            <div class="chat-window" id="chat-window" style="display: none;">
+                <div class="chat-header">
+                    <button id="back-to-contacts">&lt; Voltar</button>
+                    <span id="chat-recipient-name">Nome da Creche</span>
+                </div>
+                <div class="chat-messages" id="chat-messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+                    <button id="send-btn">Enviar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <img src="../ImagensHome/Home.png" alt="Home" class="footer-icon" onclick="window.location.href='home.html'">
+        <img src="../ImagensHome/Descoberta.png" alt="Descoberta" class="footer-icon" onclick="window.location.href='descoberta.html'">
+         <img src="../ImagensHome/Chat.png" alt="Conversas" class="footer-icon active" id="chat-btn-footer"> 
+        <img src="../ImagensHome/Sino.png" alt="Notificações" class="footer-icon" onclick="window.location.href='notificacoes.html'">
+        <img src="../ImagensHome/Perfil.png" alt="Perfil" class="footer-icon" onclick="window.location.href='perfil.html'">
+    </footer>
+
+</body>
+</html>

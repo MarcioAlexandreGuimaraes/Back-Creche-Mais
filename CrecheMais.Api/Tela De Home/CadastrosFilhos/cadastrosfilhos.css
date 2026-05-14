@@ -1,0 +1,329 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Fundo da página */
+body {
+    background: linear-gradient(135deg, rgba(110, 245, 255, 1) 0%, rgba(66, 147, 153, 1) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+/* Header com borda roxa superior */
+.header {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(0deg, rgba(176, 172, 226, 1) 0%, rgba(17, 0, 251, 0.33) 100%);
+    border-bottom-left-radius: 160px;
+    border-bottom-right-radius: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+/* conteúdo principal */
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px; 
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+/* Logo*/
+.logo {
+    width: 296px;
+    height: 198px;
+    border-radius: 55px;
+    object-fit: contain;
+    position: relative;
+    bottom: -10px;
+}
+
+/* Cartão */
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px 80px 30px;
+    width: 100%;
+    position: relative;
+}
+
+/* texto de criação de conta*/
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2C3E50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #2C3E50;
+    margin-bottom: 25px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Botões */
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFF;
+    background: #000;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFF;
+    background: #000;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px 0;
+    border-bottom: 4px solid rgba(176, 172, 226, 1);
+}
+
+/* Botão Continuar - Posicionado no canto direito */
+.btn-continuar {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    width: 120px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFF;
+    background: #CCC;
+    border: none;
+    border-radius: 12px;
+    cursor: not-allowed;
+    transition: background-color 0.3s;
+}
+
+.btn-continuar:enabled {
+    background: #000;
+    cursor: pointer;
+}
+
+.btn-continuar:enabled:hover {
+    background: #333;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    background: #333;
+}
+
+/* Estilo para todos os inputs do formulário */
+input[type="text"], 
+input[type="number"] {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background: #F5F5F5;
+    color: #2C3E50;
+    outline: none;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #00E5CC;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+/* Estilo para os radio buttons */
+.radio-group {
+    margin-top: 12px;
+    display: flex;
+    gap: 20px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+}
+
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2C3E50;
+}
+
+.radio-custom {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #B0ACE2;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.radio-custom::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #B0ACE2;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.radio-option input[type="radio"]:checked + .radio-label .radio-custom::after {
+    opacity: 1;
+}
+
+.radio-option input[type="radio"]:checked + .radio-label .radio-custom {
+    border-color: #6E46A0;
+}
+
+.radio-option input[type="radio"]:checked + .radio-label .radio-custom::after {
+    background: #6E46A0;
+}
+
+/* Estilo para os labels dos campos */
+label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2C3E50;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilo para o container do grid */
+.grid-container {
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.grid-container h2 {
+    text-align: center;
+    color: #2C3E50;
+    margin-bottom: 20px;
+}
+
+/* Container da tabela para garantir que tudo caiba */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+#gridTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    /* Essencial para que as larguras fixas funcionem */
+    table-layout: fixed; 
+}
+
+#gridTable th, #gridTable td {
+    border: 1px solid #E0E0E0;
+    padding: 10px 8px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    vertical-align: top;
+}
+
+#gridTable th {
+    background: #F5F5F5;
+    font-weight: bold;
+}
+
+/* --- LARGURAS CORRIGIDAS (Soma = 100%) --- */
+#gridTable th:nth-child(1), #gridTable td:nth-child(1) { width: 60%; } /* Nome (30%) */
+#gridTable th:nth-child(2), #gridTable td:nth-child(2) { width: 40%; } /* Idade (8%) */
+#gridTable th:nth-child(3), #gridTable td:nth-child(3) { width: 55%; } /* CPF (20%) */
+#gridTable th:nth-child(4), #gridTable td:nth-child(4) { width: 65%; } /* Deficiência (12%) */
+#gridTable th:nth-child(5), #gridTable td:nth-child(5) { width: 70%; } /* Tipo de Deficiência (20%) */
+
+
+
+
+/* Container para cada linha com posição relativa - CORRIGIDO */
+.table-row-container {
+    position: relative;
+}
+
+#noDataMessage {
+    text-align: center;
+    color: #000000;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+#btnVoltar {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFF;
+    background: #000;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btnVoltar:hover {
+    background: #333;
+}
+.removerCriancaGrid {
+    cursor:pointer;
+}

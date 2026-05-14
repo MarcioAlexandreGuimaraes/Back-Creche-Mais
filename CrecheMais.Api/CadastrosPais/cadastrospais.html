@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head> <meta charset="UTF-8" /> <meta name="viewport" 
+content="width=device-width, initial-scale=1.0" /> 
+<title>Cadastro de Pais - Creche+</title> 
+<link rel="stylesheet" href="cadastrospais.css" />
+ <script src="cadastrospais.js" defer></script> 
+</head> 
+<body> 
+  <div class="header"> 
+<img src="LogoCreche.png" alt="Logo Creche+" class="logo" /> 
+</div>
+ <div class="container"> 
+  <div class="card"> 
+<h1>Cadastro dos Pais</h1> 
+<p class="subtitle">Preencha as informações <br> 
+para se cadastrar em nosso site </p> 
+<form id="parentForm"> 
+<div class="input-group"> 
+<label for="email">E-mail</label> 
+<input type="email" id="email" placeholder="email@dominio.com" required /> 
+<label for="nome">Nome</label> 
+<input type="text" id="nome" placeholder="Nome" required /> 
+<label for="telefone">Telefone</label> 
+<input type="tel" id="telefone" placeholder="Telefone" required />
+ <label for="endereco">Endereço</label> 
+<input type="text" id="endereco" placeholder="Endereço" required /> 
+<label for="senha"> Crie sua senha</label> 
+<input type="password" id="senha" placeholder="Senha" required /> 
+</div> 
+<button type="submit" class="btn-primary">Cadastrar</button> 
+</form>
+ </div> </div> 
+<script> 
+// Preenche o campo de e-mail com o valor salvo const savedEmail 
+localStorage.getItem('userEmail'); if (savedEmail) { document.getElementById('email').value = savedEmail; } 
+</script> 
+</body> 
+</html>

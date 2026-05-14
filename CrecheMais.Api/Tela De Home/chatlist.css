@@ -1,0 +1,219 @@
+/* chat.css - Estilos para a lista de conversas */
+
+/* Variáveis de cores para consistência */
+:root {
+    --primary-purple: #673AB7; /* Roxo principal */
+    --soft-purple: #D1C4E9; /* Roxo suave */
+    --text-dark: #333333;
+    --text-medium: #666666;
+    --border-light: #eeeeee;
+    --bg-light: #f7f7f7;
+    --footer-height: 60px; /* Altura padrão do footer */
+}
+
+/* ------------------ Layout Geral ------------------ */
+
+.chat-body {
+    /* Ajuste o padding inferior para não sobrepor o footer fixo */
+    padding-bottom: var(--footer-height); 
+    background-color: var(--bg-light);
+    min-height: 100vh;
+}
+
+.chat-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.chat-container h1 {
+    font-size: 28px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.chat-main-area {
+    /* Garante que o conteúdo tenha espaço mínimo */
+    min-height: calc(100vh - 120px - var(--footer-height)); 
+}
+
+/* ------------------ Lista de Contatos ------------------ */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    /* Reduz gap entre itens para parecer uma lista contínua */
+    gap: 0; 
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden; /* Garante que os cantos arredondados sejam respeitados */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color 0.2s;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item:hover {
+    background-color: var(--bg-light);
+}
+
+.contact-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    /* Adiciona uma borda sutil para destaque */
+    border: 2px solid var(--soft-purple);
+}
+
+.contact-info {
+    flex-grow: 1;
+    /* Limita o espaço para o tempo ficar na lateral */
+    min-width: 0; 
+}
+
+.contact-name {
+    font-weight: bold;
+    color: var(--text-dark);
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.contact-last-msg {
+    color: var(--text-medium);
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* ... no final do texto longo */
+}
+
+.contact-time {
+    font-size: 12px;
+    color: #999;
+    align-self: flex-start; /* Alinha o tempo com o topo */
+    padding-top: 5px;
+    margin-left: 10px;
+}
+
+.no-contacts {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-medium);
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* ------------------ Janela de Chat (Não Usada neste HTML, mas mantida por segurança) ------------------ */
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    height: 70vh; 
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--primary-purple); /* Roxo */
+    color: white; 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#back-to-contacts { 
+    background: none;
+    border: none;
+    color: white; 
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 15px;
+    opacity: 0.9; 
+    transition: opacity 0.2s;
+}
+#back-to-contacts:hover {
+    opacity: 1;
+}
+
+#chat-recipient-name {
+    font-weight: bold;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: var(--bg-light); /* Fundo suave para as mensagens */
+}
+
+/* Estilo das mensagens (balões) */
+.message {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.08);
+}
+
+.message.user {
+    background-color: var(--soft-purple);
+    color: var(--text-dark);
+    margin-left: auto;
+    border-bottom-right-radius: 2px; /* Pequeno ajuste no canto */
+}
+
+.message.other {
+    background-color: white;
+    color: var(--text-dark);
+    margin-right: auto;
+    border-bottom-left-radius: 2px; /* Pequeno ajuste no canto */
+}
+
+/* Ajustes no Input do Chat */
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid var(--border-light);
+    background-color: white;
+}
+
+#message-input {
+    flex-grow: 1;
+    /* CORREÇÃO: Paddings e Margins corretos */
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    height: auto; /* Garante que o padding funcione */
+}
+
+#send-btn {
+    background-color: var(--primary-purple);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#send-btn:hover {
+    background-color: #512DA8; /* Roxo um pouco mais escuro */
+}

@@ -1,0 +1,216 @@
+/* conversaunica.css */
+
+/* Define cores roxas e variáveis de layout */
+:root {
+    --primary-purple: #673AB7; /* Roxo principal para cabeçalho e botão */
+    --accent-purple: #D1C4E9; /* Roxo claro para o balão do usuário */
+    --creche-bubble-color: #FFFFFF; /* Branco para a creche */
+    --background-color: #f0f2f5; /* Fundo do chat */
+    --footer-height: 60px;
+    --header-height: 56px;
+}
+
+/* 1. Layout de Tela Cheia */
+.chat-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; 
+}
+
+.chat-container {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    padding: 0; 
+    width: 100%; /* Ocupa a largura total */
+}
+
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    /* REMOVIDA A RESTRIÇÃO DE MAX-WIDTH: Ocupa a largura total da tela */
+    width: 100%;
+    /* Altura ajustada: 100% da viewport - altura do footer */
+    height: calc(100vh - var(--footer-height)); 
+    position: relative; 
+}
+
+/* 2. Cabeçalho Roxo e Fixado no Topo */
+.chat-header {
+    /* COR ROXA RETORNADA */
+    background-color: var(--primary-purple); 
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: var(--header-height); 
+    z-index: 10;
+    width: 100%;
+    box-sizing: border-box;
+    /* Adicionando fixo no topo para uma melhor experiência de app (opcional) */
+    position: sticky;
+    top: 0;
+}
+
+#back-to-chats {
+    background: none;
+    border: none;
+    color: white; /* Cor branca para o texto sobre o fundo roxo */
+    font-size: 16px;
+    margin-right: 15px;
+    cursor: pointer;
+    padding: 0;
+}
+
+#chat-recipient-name {
+    flex-grow: 1;
+}
+
+/* 3. Área de Mensagens (Preenche o Meio) */
+.chat-messages {
+    flex-grow: 1; 
+    padding: 10px;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px; 
+    background-color: var(--background-color); 
+}
+
+/* Estilo do Balão de Mensagem */
+.message {
+    max-width: 80%;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 10px;
+    line-height: 1.4;
+    font-size: 15px;
+    clear: both; 
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+}
+
+/* Estilo para Mensagens Enviadas pelo Usuário - Roxo Claro */
+.message.user {
+    align-self: flex-end; 
+    background-color: var(--accent-purple); 
+    color: #000;
+    border-radius: 10px 10px 0 10px; 
+}
+
+/* Estilo para Mensagens Recebidas (Creche) - Branco */
+.message.creche {
+    align-self: flex-start; 
+    background-color: var(--creche-bubble-color); 
+    color: #000;
+    border-radius: 10px 10px 10px 0; 
+}
+
+/* 4. Área de Input e Botão */
+/* Área de Input e Botão — agora aparece acima do footer */
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #ddd;
+    position: fixed; 
+    
+    /* 🌟 MUDANÇA AQUI: Alinhando o input exatamente no topo do footer */
+    bottom: var(--footer-height); 
+    
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 40; 
+}
+#message-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* Botão Enviar */
+#send-btn {
+    background-color: var(--primary-purple);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#send-btn:hover {
+    background-color: #512DA8;
+}
+
+
+
+/* Footer visual igual ao home */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 30; /* Garante que o footer fique acima de tudo, inclusive do card */
+}
+
+.footer-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    /* Adicionamos um filtro para os ícones padrão ficarem em tons de cinza ou menos saturados */
+    filter: grayscale(100%) opacity(0.7); 
+}
+
+.footer-icon:hover {
+    transform: scale(1.1);
+}
+
+/* NOVO ESTILO: Ícone Ativo (Para indicar a tela atual) */
+/* Este filtro tenta deixar a imagem mais próxima de um preenchido preto */
+.footer-icon.active {
+    /* Desativa o filtro, devolvendo as cores originais ou destacando-a */
+    filter: none;
+    /* Exemplo para forçar um destaque preto, dependendo da imagem: */
+   
+    
+    /* Usando 'transform' para destaque visual */
+    transform: scale(1.2); 
+}
+
+/* ... O RESTANTE DO SEU CSS ... */
+.creche-detail-card {
+    position: absolute; /* ABSOLUTO DENTRO DO .descoberta-container */
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    
+    background: linear-gradient(to top, white 85%, #f0f0ff); 
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    
+    /* AJUSTES CRÍTICOS PARA O SCROLL */
+    height: 250px; /* ALTURA VISÍVEL INICIAL */
+    max-height: calc(100% - 130px); /* Limite para não cobrir o header */
+    overflow-y: scroll; /* Permite que o conteúdo interno role */
+    padding-bottom: 70px; /* CRÍTICO: Espaço para o footer não esconder o conteúdo */
+    
+    z-index: 20;
+}

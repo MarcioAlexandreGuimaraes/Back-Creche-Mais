@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Chat Creche +</title>
+ <link rel="stylesheet" href="home.css">  <link rel="stylesheet" href="chat.css"> <script src="chat.js" defer></script> </head>
+<body class="chat-body">
+     <div class="header">
+ <img src="LogoCreche.png" alt="Logo Creche+" class="logo">
+ </div>
+
+ <div class="container chat-container">
+  <h1>Mensagens</h1>
+    
+    <div class="chat-main-area">
+
+        <div class="contact-list" id="contact-list">
+            <div class="no-contacts" id="no-contacts" style="display: none;">
+                Nenhum contato encontrado.
+            </div>
+        </div>
+
+        <div class="chat-window" id="chat-window" style="display: none;">
+            <div class="chat-header">
+                <button id="back-to-contacts">&lt; Voltar</button>
+                <span id="chat-recipient-name">Nome da Creche</span>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                </div>
+            <div class="chat-input">
+                <input type="text" id="message-inpu t" placeholder="Digite sua mensagem...">
+                <button id="send-btn">Enviar</button>
+            </div>
+        </div>
+    </div>

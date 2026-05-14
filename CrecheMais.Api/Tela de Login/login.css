@@ -1,0 +1,180 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Fundo da página */
+body {
+    background: linear-gradient(135deg, rgba(110, 245, 255, 1) 0%, rgba(66, 147, 153, 1) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Header com borda roxa superior */
+.header {
+    width: 100%;
+    height: 250px; /* Reduzido de 330px */
+    background: linear-gradient(0deg, rgba(176, 172, 226, 1) 0%, rgba(17, 0, 251, 0.33) 100%);
+    border-bottom-left-radius: 160px;
+    border-bottom-right-radius: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+/* conteúdo principal */
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: -32px;
+}
+/* Logo*/
+.logo {
+    width: 296px;
+    height: 198px;
+    border-radius: 55px;
+    object-fit: contain;
+    position: relative;
+    bottom: -10px; /
+}
+
+
+/* Cartão */
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    width: 100%;
+}
+/* texto de criação de conta*/
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2C3E50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #2C3E50;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+   
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background: #F5F5F5;
+    color: #2C3E50;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="email"]:focus {
+    border-color: #00E5CC;
+}
+
+input[type="email"]::placeholder {
+    color: #999;
+}
+
+/* Botões */
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFF;
+    background: #000;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: background-color 0.3s;
+}
+/* Bot]ao de continuar */
+.btn-primary:hover {
+    background: #333;
+}
+/* Botão Google */
+.btn-google {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2C3E50;
+    background: #F5F5F5;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-google:hover {
+    background: #E8E8E8;
+}
+/* Ícone do Google */
+.google-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #2C3E50;
+    font-weight: 500;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #E0E0E0;
+}
+
+.divider span {
+    padding: 0 10px;
+}
+
+/* Termos */
+.terms {
+    text-align: center;
+    font-size: 13px;
+    color: #2C3E50;
+    line-height: 1.5;
+}
+
+.terms a {
+    color: #2C3E50;
+    text-decoration: underline;
+    font-weight: 600;
+}

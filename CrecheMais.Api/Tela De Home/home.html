@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Creche +</title>
+    <link rel="stylesheet" href="home.css">
+    <!-- Removi link para chat.css/js que não são usados nesta página -->
+    <script src="home.js" defer></script> 
+</head>
+<body>
+    <div class="header">
+        <img src="LogoCreche.png" alt="Logo Creche+" class="logo">
+    </div>
+
+    <div class="container">
+        <div class="search-section">
+            <h1>Buscar</h1>
+            
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Pesquisar creches...">
+                <button id="search-btn">
+                    <span>Buscar</span>
+                    <img src="../ImagensHome/lupa.png" alt="Pesquisar" class="search-icon">
+                </button>
+            </div>
+
+            <div class="search-options">
+                <button class="search-option" id="favoritos-btn">
+                    <img src="../ImagensHome/like.png" alt="Favoritos" class="option-icon">
+                    <span>Favoritos</span>
+                </button>
+                <button class="search-option" id="historico-btn">
+                    <img src="../ImagensHome/iconehistory.png" alt="Histórico" class="option-icon">
+                    <span>Histórico</span>
+                </button>
+                <button class="search-option" id="chat-btn">
+                    <img src="../ImagensHome/Chat.png" alt="Chat" class="option-icon">
+                    <span>Chat</span>
+                </button>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="creches-section">
+            <h2 id="creches-title">Creches</h2>
+            <div class="creches-list" id="creches-list"></div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="creches-section">
+            <h2>Creches Recomendadas</h2>
+            <div class="creches-list" id="recommended-list"></div>
+        </div>
+    </div>
+    
+    <!-- Modal Existente: Detalhes da Creche / Cadastro / Lista de Espera -->
+    <div id="creche-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <img id="modal-image" src="" alt="Imagem da Creche" class="modal-image">
+            <div class="modal-info">
+                <h3 id="modal-name" class="modal-name">Nome da Creche</h3>
+
+                <div class="modal-details-grid">
+                    <p><strong>Rua:</strong> <span id="modal-rua"></span></p>
+                    <p><strong>Número:</strong> <span id="modal-numero"></span></p>
+                    <p><strong>Bairro:</strong> <span id="modal-bairro"></span></p>
+                    <p><strong>Cidade:</strong> <span id="modal-cidade"></span></p>
+                    <p><strong>Estado:</strong> <span id="modal-estado"></span></p>
+                    <p><strong>Vagas Disponíveis:</strong> <span id="modal-vagas"></span></p>
+                    <p><strong>Diretor(a):</strong> <span id="modal-diretor"></span></p>
+                    <p><strong>Horário Manhã:</strong> <span id="modal-manha"></span></p>
+                    <p><strong>Horário Tarde:</strong> <span id="modal-tarde"></span></p>
+                </div>
+                
+               <button id="action-btn" class="contact-btn">Cadastrar na Creche</button>
+               <p id="success-message" class="success-message" style="display: none;">Mensagem de Sucesso!</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <!-- Home como ícone ativo na tela Home -->
+        <img src="../ImagensHome/Home.png" alt="Home" class="footer-icon active"> 
+        <img src="../ImagensHome/Descoberta.png" alt="Descoberta" class="footer-icon" onclick="window.location.href='descoberta.html'">
+        <img src="../ImagensHome/Chat.png" alt="Conversas" class="footer-icon" onclick="window.location.href='chatlist.html'"> 
+        <img src="../ImagensHome/Sino.png" alt="Notificações" class="footer-icon" id="chat-btn" onclick="window.location.href='notificacoes.html'">
+        <img src="../ImagensHome/Perfil.png" alt="Perfil" class="footer-icon" onclick="window.location.href='perfil.html'">
+    </footer>
+</body>
+</html>
